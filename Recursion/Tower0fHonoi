@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+void TowerOfHanoi( int n ,string src, string help, string desti){
+  if (n==1 ){
+      cout << "transfer disk " << n << "from "<< src << " to "<< desti << endl ;
+      return;
+  }
+  TowerOfHanoi(n-1, src, desti, help);
+  cout << "transfer disk " << n << "from "<< src << " to "<< desti << endl ;
+  TowerOfHanoi(n-1,help,src,desti);
+
+}
+int main (){
+  int n = 3 ;
+  TowerOfHanoi(n,"S","H","D");
+}
