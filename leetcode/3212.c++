@@ -1,4 +1,4 @@
-// Q:3212.Count Submatrices With Equal Frequency of X and Y
+// Q:3212. Count Submatrices With Equal Frequency of X and Y
 #include <iostream>
 #include <vector>
 using namespace std;
