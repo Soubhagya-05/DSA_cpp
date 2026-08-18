@@ -1,11 +1,21 @@
 #include <iostream>
 using namespace std;
-int main(){
-int year;
-cout << "enter the year";
-cin >> year;
-if (year %4 == 0){
-    cout << year << " is a leap year";
+int main () {
+
+int n ;
+cout << "Enter the number of elements: ";
+cin >> n;
+int org = n;
+int rev = 0;
+while ( n > 0){
+int digit = n %10;
+rev = rev * 10 + digit ;
+
+n /=10;
+}
+if ( org == rev){
+    cout << "The number is a palindrome" << endl;
 }else {
-    cout << year << " is not a leap year";
+    cout << "The number is not a palindrome" << endl;
+}
 }
