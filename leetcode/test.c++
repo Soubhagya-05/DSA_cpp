@@ -1,51 +1,42 @@
 #include <iostream>
-#include <string>
-#include <cctype>
+#include <vector>
 using namespace std;
-int main(){
- string name;
- cout << " Enter your name:";
- cin >> name;
+int main (){
+    int EmID;
+    cout << "Enter Employee ID:";
+    cin >> EmID;
+    double salaary, HRA, DA, Gross_salaary, PF, TAX, Net_salaary;
+    cout << "Enter Employee Salaary:";
+    cin >> salaary;
+    HRA = 0.20 * salaary;
+    DA = 0.10 * salaary ;
+    Gross_salaary = salaary + HRA + DA;
+    PF = 0.12 * salaary ;
+    if (Gross_salaary > 50000){
+        TAX = 0.10 * Gross_salaary;
+    }else {
+        TAX = 0.05 * Gross_salaary;
+    }
+    Net_salaary = Gross_salaary - PF - TAX;
 
- string pass ;
- cout << "Enter your password:";
- cin >> pass;
- bool upper  = false;
- bool one_digit = false;
-  for ( char c : pass ){
-    if (isupper(c)){
-        upper = true;;
-    }
-    if (isdigit(c)){
-        one_digit = true;
-    }
-  }
-  if (name.length() < 5 ){
-    cout << "Username must contain at least 5 characters" << endl;
- }
-  if (pass.length() < 8 && !upper && !one_digit){
-    cout << "Password must contain at least 8 characters" << endl;
-    cout << "Password must contain at least one uppercase letter" << endl;
-     cout << "Password must contain at least one digit" << endl;
-  } else if (pass.length() < 8 && !one_digit){
-        cout << "Password must contain at least 8 characters" << endl;
-         cout << "Password must contain at least one digit" << endl;
-  }else if (!upper && !one_digit){
-    cout << "Password must contain at least one uppercase letter" << endl;
-     cout << "Password must contain at least one digit" << endl;
-  }
-  else if (!upper && pass.length() < 8){
-    cout << "Password must contain at least one uppercase letter" << endl;
-  
-       cout << "Password must contain at least 8 characters" << endl;
-  }else if (pass.length() < 8){
-    cout << "Password must contain at least 8 characters" << endl;
-  }else if (!upper){
-    cout << "Password must contain at least one uppercase letter" << endl;
-    }else if (!one_digit){
-    cout << "Password must contain at least one digit" << endl;
-    }
-  else {
-    cout  << " Login validation successful." << endl;
-  }
+    cout << " ==================================="<< endl;
+    cout << "           PHILIPS SALAARY SLIP     "<< endl;
+    cout << " ==================================="<< endl;
+    cout << "Employee ID :" << EmID << endl;
+    cout << "Basic Salaary :"<< salaary << endl;
+    cout << " ==================================="<< endl;
+
+    cout << "HRA (20%):"<< HRA << endl;
+    cout << "DA(10%):"<< DA << endl;
+    cout <<"Gross Salaary:" << Gross_salaary << endl;
+    cout << " ==================================="<< endl;
+    cout << "PF(12%):"<< PF << endl;
+    cout << "TAX(10%):"<< TAX << endl;
+    cout << " ==================================="<< endl;
+    cout << "NET SALAARY :" <<  Net_salaary << endl;
+
+
+
+
+
 }
